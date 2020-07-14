@@ -1,0 +1,8 @@
+{
+  "custom_middleware": {
+    "driver": "goplugin",
+    "post": [{
+      "name": "ResponseSendCurrentTime"
+    }]
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "file_list": [
+  ],
+  "custom_middleware": {
+    "pre": [
+      {
+        "name": "MyPreHook"
+      }
+    ],
+    "auth_check": {
+      "name": "MyAuthCheck"
+    },
+    "driver": "grpc",
+    "id_extractor": {
+      "extract_from": "header",
+      "extract_with": "value",
+      "extractor_config": {
+        "header_name": "Authorization"
+      }
+    }
+  },
+  "checksum": "",
+  "signature": ""
+}
