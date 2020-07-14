@@ -14,7 +14,7 @@ Javascript	|	Pre	|	Auth Token & mTLS protection	|	[Link](plugins/js-pre-mtls_tok
 Javascript	|	Pre	|	Evaluates the validity of a Tyk Token	|	[Link](plugins/js-pre-token_inspection)
 Javascript	|	Post	|	Checks API requests against a WAF	|	[Link](plugins/js-pre-post-waf)
 Golang	|	Post+Auth	|	Dummy one to test the 2 hooks in go	|	[Link](plugins/go-auth-multiple_hook_example)
-gRPC (GoLang)	|	Pre	|	Header Injection	|	[Link](plugins/go-auth-pre_headerinject_authhook) 
+gRPC (GoLang)	|	Pre	|	Header Injection & Auth example	|	[Link](plugins/go-auth-pre_headerinject_authhook) 
 Python	|	Auth	|	Checks API requests against a hard-coded token	|	[Link](plugins/py-auth_example) 
 Javascript	|	Virtual Endpoint	|	Tyk as an OAuth2.0 Client in client_credentials flow in Auth0	|	https://gist.github.com/letzya/ba7c2cd833c11fac61ae4a1d1908f1dc
 Javascript	|	Virtual Endpoint	|	Tyk as an OAuth2.0 Client in client_credentials flow in Azure	|	https://gist.github.com/letzya/7e852181643e871481a7997ae3d5b84a
