@@ -9,9 +9,10 @@ Whilst not technically a "plugin", [Virtual Endpoint](https://tyk.io/docs/advanc
 ## Examples
 Language | Phase | Description | Link 
 -------- | ----- |------------ | --- 
-GoLang	|	Post-Auth	|	OAuth2 Introspection	|	https://github.com/asoorm/tyk-go-plugins/tree/master/oauth2_introspection
-GoLang	|	Post-Auth	|	Authorizes request against OPA	|	https://github.com/asoorm/tyk-go-plugins/tree/master/authorize_opa
-Golang	|	Post+Auth	|	Dummy one to test the 2 hooks in go	|	[Link](plugins/go-auth-multiple_hook_example)
+GoLang	|	Post-Auth	|	OAuth2 Introspection	|	[Link](plugins/go-postauth-oauth2_introspection)
+GoLang	|	Post-Auth	|	Authorizes request against OPA	|	[Link](plugins/go-postauth-opa_integration)
+Golang	|	Post + Auth	|	Dummy one to test the 2 hooks in go	|	[Link](plugins/go-auth-multiple_hook_example)
+Golang	|	Auth	|	Checks Basic Auth creds  against an AWS DynamoDB instance	|	[Link](plugins/go-auth-basicauth_dynamodb)
 gRPC (GoLang)	|	Pre	|	Header Injection & Auth example	|	[Link](plugins/grpc_go-auth-pre_headerinject_authhook) 
 gRPC (Java)	|	Auth	|	Decodes JWT, inserts a claim and resigns it	|	[Link](plugins/grpc_java-auth-jwt_decoder_repackager) 
 Javascript	|	Pre	|	Inserts tracing ID in header	|	[Link](plugins/js-pre-insert_header)
