@@ -9,10 +9,10 @@ Whilst not technically a "plugin", [Virtual Endpoint](https://tyk.io/docs/advanc
 ## Examples
 Language | Phase | Description | Link 
 -------- | ----- |------------ | --- 
-Javascript	|	Pre	|	Inserts tracing ID in header	|	https://github.com/sedkis/tyk/blob/master/plugins/javascript/js-insert-header.md
-Javascript	|	Pre	|	Auth Token & mTLS protection	|	https://github.com/sedkis/tyk/tree/master/plugins/javascript/auth-token-and-mtls-protection
-Javascript	|	Pre	|	Evaluates the validity of a Tyk Token	|	https://github.com/sedkis/tyk/tree/master/plugins/javascript/pre-transform-content-type
-Javascript	|	Post	|	Checks API requests against a WAF	|	https://github.com/sedkis/tyk/tree/master/plugins/javascript/waf
+Javascript	|	Pre	|	Inserts tracing ID in header	|	[Link](plugins/js-pre-insert_header)
+Javascript	|	Pre	|	Auth Token & mTLS protection	|	[Link](plugins/js-pre-mtls_token_auth)
+Javascript	|	Pre	|	Evaluates the validity of a Tyk Token	|	[Link](plugins/js-pre-token_inspection)
+Javascript	|	Post	|	Checks API requests against a WAF	|	[Link](plugins/js-pre-post-waf)
 Golang	|	Post+Auth	|	Dummy one to test the 2 hooks in go	|	https://github.com/letzya/go-plugin-demo
 gRPC (GoLang)	|	Pre	|	Header Injection	|	https://github.com/TykTechnologies/tyk-plugin-demo-golang
 Python	|	Auth	|	Checks API requests against a hard-coded token	|	https://github.com/TykTechnologies/tyk-plugin-demo-python
@@ -25,3 +25,23 @@ GoLang	|	Post-Auth	|	Authorizes request against OPA	|	https://github.com/asoorm/
 ## Requests
 
 Have a cool or useful idea to add to this list?  Feel free to open an issue.
+
+
+## Developers
+
+If adding an example, first off, thank you.
+
+1.
+Create a new directory the following name pattern:
+```
+<language>-<phase>-<description1>_<description2>_<description3>
+```
+For example:
+```
+js-pre-insert_header/
+|- README.md
+|- myplugin.js
+|- apidef.js
+```
+
+2. Include a README with instructions, and the supporting files in the directory
