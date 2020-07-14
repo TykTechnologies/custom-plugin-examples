@@ -21,3 +21,7 @@ Javascript	|	Virtual Endpoint	|	Tyk as an OAuth2.0 Client in client_credentials 
 Javascript	|	Virtual Endpoint	|	Demo body transform of response, XML to JSON using petstore's endpoint /pet/{id}	|	https://gist.github.com/letzya/7df4dbc37f2f075795995efb8e205d3e
 GoLang	|	Post-Auth	|	OAuth2 Introspection	|	https://github.com/asoorm/tyk-go-plugins/tree/master/oauth2_introspection
 GoLang	|	Post-Auth	|	Authorizes request against OPA	|	https://github.com/asoorm/tyk-go-plugins/tree/master/authorize_opa
+
+## Requests
+
+Have a cool or useful idea to add to this list?  Feel free to open an issue.
