@@ -1,0 +1,24 @@
+{
+  "file_list": [
+  ],
+  "custom_middleware": {
+    "pre": [
+      {
+        "name": "MyPreMiddleware",
+        "require_session": false
+      }
+    ],
+    "post": [
+      {
+        "name": "MyPostMiddleware",
+        "require_session": true
+      }
+    ],
+    "auth_check": {
+      "name": "MyAuthCheck"
+    },
+    "driver": "grpc"
+  },
+  "checksum": "",
+  "signature": ""
+}

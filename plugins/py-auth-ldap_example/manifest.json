@@ -1,0 +1,16 @@
+{
+    "file_list": [
+        "middleware.py"
+    ],
+    "custom_middleware": {
+        "driver": "python",
+        "auth_check": {
+            "name": "MyLDAPMidleware"
+        },
+        "id_extractor": {
+	    	"extract_from": "header",
+	    	"extract_with": "value",
+	    	"extractor_config": {"header_name": "Authorization"}
+	    }
+    }
+}

@@ -1,0 +1,21 @@
+{
+  "file_list": [
+    "middleware.py",
+    "correlation.py"
+  ],
+  "custom_middleware": {
+    "pre": [
+      {
+        "name": "PreMiddleware"
+      }
+    ],
+    "post": [
+      {
+        "name": "PostMiddleware"
+      }
+    ],
+    "driver": "python"
+  },
+  "checksum": "",
+  "signature": ""
+}
