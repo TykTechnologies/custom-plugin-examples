@@ -18,7 +18,6 @@ gRPC (GoLang)	|	Pre	|	Invokes an AWS Lambda	|	[Link](plugins/grpc_go-pre-aws_lam
 gRPC (Java)	|	Auth	|	Decodes JWT, inserts a claim and resigns it	|	[Link](plugins/grpc_java-auth-jwt_decoder_repackager) 
 gRPC (.NET)	|	Auth	|	Performs auth check against a SQL server	|	[Link](plugins/grpc_dotnet-auth_sql_basicauth ) 
 gRPC (Ruby)	|	Pre  |	Modifies HTTP header	|	[Link](plugins/grpc_ruby-pre-header_modify) 
-## Requests
 Javascript	|	Pre	|	Inserts tracing ID in header	|	[Link](plugins/js-pre-insert_header)
 Javascript	|	Pre	|	Auth Token & mTLS protection	|	[Link](plugins/js-pre-mtls_token_auth)
 Javascript	|	Pre	|	Evaluates the validity of a Tyk Token	|	[Link](plugins/js-pre-token_inspection)
@@ -34,6 +33,9 @@ Python	|	Pre	|	This plugin sends log data to a Datadog agent.	|	[Link](plugins/p
 Python	|	Pre	|	This plugin sends log data to a Loggly HTTPS endpoint	|	[Link](plugins/py-pre-loggly_integration) 
 Python	|	Pre	|	This plugin will block requests from specific user agents, using regular expressions.	|	[Link](plugins/py-pre-bot_detection) 
 Python	|	Pre  +  Post	|	Inserts a correlation ID as a header	|	[Link](plugins/py-pre_post-correlation_id_insert) 
+
+
+## Requests
 
 Have a cool or useful idea to add to this list?  Feel free to open an issue.
 
