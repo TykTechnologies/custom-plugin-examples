@@ -14,8 +14,11 @@ GoLang	|	Post-Auth	|	Authorizes request against OPA	|	[Link](plugins/go-postauth
 Golang	|	Post + Auth	|	Dummy one to test the 2 hooks in go	|	[Link](plugins/go-auth-multiple_hook_example)
 Golang	|	Auth	|	Checks Basic Auth creds  against an AWS DynamoDB instance	|	[Link](plugins/go-auth-basicauth_dynamodb)
 gRPC (GoLang)	|	Pre	|	Header Injection & Auth example	|	[Link](plugins/grpc_go-auth-pre_headerinject_authhook) 
+gRPC (GoLang)	|	Pre	|	Invokes an AWS Lambda	|	[Link](plugins/grpc_go-pre-aws_lambda) 
 gRPC (Java)	|	Auth	|	Decodes JWT, inserts a claim and resigns it	|	[Link](plugins/grpc_java-auth-jwt_decoder_repackager) 
 gRPC (.NET)	|	Auth	|	Performs auth check against a SQL server	|	[Link](plugins/grpc_dotnet-auth_sql_basicauth ) 
+gRPC (Ruby)	|	Pre  |	Modifies HTTP header	|	[Link](plugins/grpc_ruby-pre-header_modify) 
+## Requests
 Javascript	|	Pre	|	Inserts tracing ID in header	|	[Link](plugins/js-pre-insert_header)
 Javascript	|	Pre	|	Auth Token & mTLS protection	|	[Link](plugins/js-pre-mtls_token_auth)
 Javascript	|	Pre	|	Evaluates the validity of a Tyk Token	|	[Link](plugins/js-pre-token_inspection)
@@ -23,12 +26,14 @@ Javascript	|	Post	|	Checks API requests against a WAF	|	[Link](plugins/js-pre-po
 Javascript	|	Virtual Endpoint	|	Tyk as an OAuth2.0 Client in client_credentials flow in Auth0	|	https://gist.github.com/letzya/ba7c2cd833c11fac61ae4a1d1908f1dc
 Javascript	|	Virtual Endpoint	|	Tyk as an OAuth2.0 Client in client_credentials flow in Azure	|	https://gist.github.com/letzya/7e852181643e871481a7997ae3d5b84a
 Javascript	|	Virtual Endpoint	|	Demo body transform of response, XML to JSON using petstore's endpoint /pet/{id}	|	https://gist.github.com/letzya/7df4dbc37f2f075795995efb8e205d3e
+Lua	|	Pre	|	header injection	|	[Link](plugins/lua-pre-header_injection) 
 Python	|	Auth	|	Checks API requests against a hard-coded token	|	[Link](plugins/py-auth_example) 
 Python	|	Auth	|	Validates credentials against an LDAP server	|	[Link](plugins/py-auth-ldap_example) 
 Python	|	Pre	|	This plugin sends a message to a queue server, it uses kombu as the messaging library	|	[Link](plugins/py-pre-message_queue_kombo) 
+Python	|	Pre	|	This plugin sends log data to a Datadog agent.	|	[Link](plugins/py-pre-datadog_logger) 
+Python	|	Pre	|	This plugin sends log data to a Loggly HTTPS endpoint	|	[Link](plugins/py-pre-loggly_integration) 
+Python	|	Pre	|	This plugin will block requests from specific user agents, using regular expressions.	|	[Link](plugins/py-pre-bot_detection) 
 Python	|	Pre  +  Post	|	Inserts a correlation ID as a header	|	[Link](plugins/py-pre_post-correlation_id_insert) 
-
-## Requests
 
 Have a cool or useful idea to add to this list?  Feel free to open an issue.
 

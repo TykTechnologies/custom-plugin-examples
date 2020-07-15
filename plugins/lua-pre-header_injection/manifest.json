@@ -1,0 +1,15 @@
+{
+  "file_list": [
+    "mymiddleware.lua"
+  ],
+  "custom_middleware": {
+    "pre": [
+      {
+        "name": "MyPreMiddleware"
+      }
+    ],
+    "driver": "lua"
+  },
+  "checksum": "",
+  "signature": ""
+}
