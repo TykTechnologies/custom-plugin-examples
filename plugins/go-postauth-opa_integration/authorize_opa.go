@@ -21,7 +21,7 @@ var (
 	opaLogger = log.Get()
 )
 
-// Compile Plugin: go build -buildmode=plugin -o ./tyk_go_plugins/authorize_opa/authorize_opa.so ./tyk_go_plugins/authorize_opa/authorize_opa.go
+// Compilew Plugin: go build -buildmode=plugin -o ./tyk_go_plugins/authorize_opa/authorize_opa.so ./tyk_go_plugins/authorize_opa/authorize_opa.go
 // Compile Gateway: go install -tags 'goplugin'
 
 // PostAuthOpa doesn't do much at the moment, but it's supposed to query OPA to determine if the application
