@@ -14,6 +14,7 @@ Golang	|	Auth	|	Checks Basic Auth creds  against an AWS DynamoDB instance	|	[Lin
 gRPC (GoLang)	|	Pre	|	Header Injection & Auth example	|	[Link](plugins/grpc_go-auth-pre_headerinject_authhook) 
 gRPC (GoLang)	|	Pre	|	Invokes an AWS Lambda	|	[Link](plugins/grpc_go-pre-aws_lambda) 
 gRPC (Java)	|	Auth	|	Decodes JWT, inserts a claim and resigns it	|	[Link](plugins/grpc_java-auth-jwt_decoder_repackager) 
+gRPC (Java)	|	Post	|	Inserts Metadata from the portal requested key as an HTTP header	|	[Link](plugins/grpc_java-post-insert_metadata_as_header) 
 gRPC (.NET)	|	Auth	|	Performs auth check against a SQL server	|	[Link](plugins/grpc_dotnet-auth_sql_basicauth ) 
 gRPC (Ruby)	|	Pre  |	Modifies HTTP header	|	[Link](plugins/grpc_ruby-pre-header_modify) 
 Javascript	|	Pre	|	Inserts tracing ID in header	|	[Link](plugins/js-pre-insert_header)

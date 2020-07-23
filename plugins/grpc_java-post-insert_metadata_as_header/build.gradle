@@ -1,0 +1,57 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.google.protobuf:protobuf-gradle-plugin:0.8.8'
+
+    }
+}
+
+plugins {
+  id "com.google.protobuf" version "0.8.8"
+  id "java"
+  id "application"
+  id "idea"
+}
+
+protobuf {
+    protoc {
+        artifact = "com.google.protobuf:protoc:3.7.1"
+    }
+    plugins {
+        grpc {
+            artifact = 'io.grpc:protoc-gen-grpc-java:1.21.0'
+        }
+    }
+    generateProtoTasks {
+        all()*.plugins {
+            grpc {}
+        }
+    }
+    generatedFilesBaseDir = "$projectDir/src/generated"
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+mainClassName = "com.tyktechnologies.tykmiddleware.TykMiddleware"
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'com.auth0:java-jwt:3.10.2'
+    compile 'io.grpc:grpc-all:1.21.0'
+    compile 'com.rabbitmq:amqp-client:5.4.2'
+    compileOnly "javax.annotation:javax.annotation-api:1.2"
+}
+
+idea {
+    module {
+        sourceDirs += file("${projectDir}/src/generated/main/java");
+        sourceDirs += file("${projectDir}/src/generated/main/grpc");
+    }
+}
+
