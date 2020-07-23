@@ -56,3 +56,13 @@ Add this to the Tyk API definition:
       }
     },
     ```
+
+## FAQ
+
+I see this error in my gateway logs, why?
+
+```
+"time="Jul 23 18:27:32" level=error msg="Context variable type is not supported: map[string]interface {}
+```
+
+It's because we haven't set the context data.  That's ok - we're not using it for this use case and we can ignore this error.
