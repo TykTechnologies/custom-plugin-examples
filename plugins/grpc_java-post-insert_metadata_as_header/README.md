@@ -5,9 +5,6 @@ Java gRPC plugin
 
 This repository provides a sample [gRPC](http://www.grpc.io/) plugin, written in Java, intended to work as part of [Tyk](https://tyk.io/). Gradle is used.
 
-Simple auth logic is implemented, based on [Tyk custom middleware hooks](https://tyk.io/docs/tyk-api-gateway-v1-9/javascript-plugins/middleware-scripting/) logic.
-A class implements the required hook methods.
-
 ## The hook
 
 This plugin implements a single POST hook, it will inject metadata from a Portal Requested Key into the request as an HTTP Header
@@ -55,7 +52,7 @@ Add this to the Tyk API definition:
         "extractor_config": {}
       }
     },
-    ```
+```
 
 ## FAQ
 
