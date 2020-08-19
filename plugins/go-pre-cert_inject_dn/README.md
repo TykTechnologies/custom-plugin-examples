@@ -1,10 +1,10 @@
-# go-dynamodb-basicauth-plugin
+# Certificate DN Injector
 
-Built to be run natively as a plugin by Tyk Gateway.  
+Built to be run natively as a GO plugin by Tyk Gateway.  
 
-This is a "pre" plugin that will execute before Authentication is performed by Tyk.
+This is a "pre" plugin that will execute before authentication is performed by Tyk Gateway.
 
-This will just take the Client certificate in the API request and inject the cert issuer and fingerprint as headers to the upstream server.
+This will take the client certificate in the API request and inject the cert issuer and fingerprint as headers to the upstream server.
 
 ## Building From Docker
 You can use the [Docker instructions](https://tyk.io/docs/plugins/supported-languages/golang/#building-a-golang-plugin) to generate a plugin binary.
@@ -44,3 +44,24 @@ in API Designer, click on "Raw API Definition"
 Pre is the phase in the cycle where it runs.
 "name" has to be the name of the GO function
 "path" is wherever you put the binary generated in step 1
+
+## Example
+With a mock upstream that echos HTTP requests:
+
+```
+$ curl https://tyk.gw/mtlsapi/get --cert clientpubkey.pem --key clientprivkey.pem
+{
+  "args": {},
+  "headers": {
+    "Accept": "*/*",
+    "Accept-Encoding": "gzip",
+    "Host": "httpbin.org",
+    "User-Agent": "curl/7.64.1",
+    "X-Amzn-Trace-Id": "Root=1-5f3d6903-4b0afec0a05b7fc068087c00",
+    "X-Client-Fingerprint": "53:2D:C3:73:5F:80:0A:E7:5C:1A:DD:E7:00:C7:4D:07:2D:9A:70:AA",
+    "X-Client-Issuer": "my-self-signed-cert-issuer"
+  },
+  "origin": "172.23.0.1, 147.253.129.30",
+  "url": "http://httpbin.org/get"
+}
+```
