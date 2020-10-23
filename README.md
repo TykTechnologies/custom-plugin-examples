@@ -43,7 +43,7 @@ Javascript	|	Tyk as an OAuth2.0 Client in client_credentials flow in Auth0	|	htt
 Javascript	|	Tyk as an OAuth2.0 Client in client_credentials flow in Azure	|	https://gist.github.com/letzya/7e852181643e871481a7997ae3d5b84a
 Javascript	|	Demo body transform of response, XML to JSON using petstore's endpoint /pet/{id}	|	https://gist.github.com/letzya/7df4dbc37f2f075795995efb8e205d3e
 Javascript	|	Make POST request with FormData to Upstream	|	[Link](plugins/ve_formdata-post)
-
+Javascript	|	Create API Key via Dashboard API 	|	[Link](plugins/ve_createkey.md)
 
 ## Requests
 
