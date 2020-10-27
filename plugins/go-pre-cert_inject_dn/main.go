@@ -24,10 +24,15 @@ func CertHeaderInject(w http.ResponseWriter, r *http.Request) {
 	if len(r.TLS.PeerCertificates) > 0 {
 		// Requested Hostname, same as nginx "$host"
 		r.Header.Set("x-client-requested-servername", r.TLS.ServerName)
+		log.Info("x-client-requested-servername: " + r.TLS.ServerName)
 		// Client Cert Issuer
 		r.Header.Set("X-Client-Issuer", r.TLS.PeerCertificates[0].Issuer.CommonName)
+		log.Info("X-Client-Issuer: " + r.TLS.PeerCertificates[0].Issuer.CommonName)
 		// Client Cert Fingerprint
 		r.Header.Set("X-Client-Fingerprint", getFingerprintString(sha1.Sum(r.TLS.PeerCertificates[0].Raw)))
+		log.Info("X-Client-Fingerprint: " + getFingerprintString(sha1.Sum(r.TLS.PeerCertificates[0].Raw)))
+	} else {
+		log.Info("No Peer certificates found.")
 	}
 }
 
