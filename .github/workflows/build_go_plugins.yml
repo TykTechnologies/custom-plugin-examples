@@ -17,6 +17,7 @@ jobs:
   update:
     runs-on: ubuntu-latest
     strategy:
+      fail-fast: false
       matrix:
         plugin: [go-auth-basicauth_dynamodb, go-auth-multiple_hook_example, go-postauth-oauth2_introspection, go-postauth-opa_integration, go-pre-cert_inject_dn]
         version: [v2.9.4.1, v3.0.0, v3.0.1, v3.0.2, v3.1.0, v3.1.1]
@@ -47,7 +48,7 @@ jobs:
           git config --local user.email "tip@custom-plugin"
           git config --local user.name "Bender"
           git add -f builds
-          git commit -m "[CI] Build '${{ matrix.plugin }}' plugin for '${{ matrix.version }}' version"
-          git push
+          git commit -m "[CI] Build '${{ matrix.plugin }}' plugin for '${{ matrix.version }}' version" || true
+          git push || true
 
 
