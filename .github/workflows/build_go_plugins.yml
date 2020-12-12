@@ -62,8 +62,9 @@ jobs:
         run: |
           git config --local user.email "tip@custom-plugin"
           git config --local user.name "Bender"
+          git pull --rebase
           git add -f builds
           git commit -m "[CI] Build '${{ matrix.plugin }}' plugin for '${{ matrix.version }}' version" || true
-          git push || true
+          git push
 
 
