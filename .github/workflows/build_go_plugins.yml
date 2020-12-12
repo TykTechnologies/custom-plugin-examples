@@ -30,7 +30,7 @@ jobs:
         working-directory: ./plugins/${{ matrix.plugin }}
         run: |
           mkdir builds || true
-          docker run --rm -v `pwd`:/plugin-source tykio/tyk-plugin-compiler:$VERSION builds/$PLUGIN_$VERSION.so
+          docker run --rm -v `pwd`:/plugin-source tykio/tyk-plugin-compiler:${VERSION} builds/${PLUGIN}_${VERSION}.so
           ls builds
           
 #       - name: Commit bindata and submodule
