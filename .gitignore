@@ -1,2 +1,5 @@
 .DS_Store
 .idea
+
+vendor/golang.org/x/sys/unix/
+vendor/TykTechnologies/tyk
