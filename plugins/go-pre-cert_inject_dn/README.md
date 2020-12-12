@@ -1,3 +1,14 @@
+---
+author = "Sedky Abou-Shamalah"
+title = "Certificate DN Injector"
+date = "2019-03-11"
+description = "Inject certficate DN to request object as header"
+tags = [
+    "go",
+    "certificate"
+]
+---
+
 # Certificate DN Injector
 
 Built to be run natively as a GO plugin by Tyk Gateway.  
