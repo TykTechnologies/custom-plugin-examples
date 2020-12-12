@@ -36,10 +36,25 @@ jobs:
           mkdir builds || true
           mkdir builds/so || true
           mkdir builds/manifest || true
-          FILE=builds/so/${PLUGIN}_${VERSION}.so
+          FILE=builds/so/${PLUGIN}_${VERSION}.so          
           if [ ! -e "$FILE" ]; then
+          
+            GOMOD=go.mod
+            if [ -e "$GOMOD" ]; then
+              go mod vendor
+            fi
+
             docker run --rm -v `pwd`:/plugin-source tykio/tyk-plugin-compiler:${VERSION} ${PLUGIN}_${VERSION}.so
             mv ${PLUGIN}_${VERSION}.so builds/so
+            
+            if [ ! -e "$FILE" ]; then
+              echo "Failed build plugin"
+              exit 1
+            fi
+            
+            if [ -e "$GOMOD" ]; then
+              rm -rf vendor
+            fi
           fi
           
       - name: Commit build
