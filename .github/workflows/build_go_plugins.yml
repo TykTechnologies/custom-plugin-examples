@@ -33,21 +33,22 @@ jobs:
           VERSION: ${{ matrix.version }}
         run: |
           mkdir builds || true
-          docker run --rm -v `pwd`:/plugin-source tykio/tyk-plugin-compiler:${VERSION} builds/${PLUGIN}_${VERSION}.so
-          ls builds
+          mkdir builds/so || true
+          mkdir builds/manifest || true
+          FILE=builds/so/${PLUGIN}_${VERSION}.so
+          if [ ! -e "$FILE" ]; then
+            docker run --rm -v `pwd`:/plugin-source tykio/tyk-plugin-compiler:${VERSION} ${PLUGIN}_${VERSION}.so
+            mv ${PLUGIN}_${VERSION}.so builds/so
+          fi
           
-#       - name: Commit bindata and submodule
-#         run: |
-#           git config --local user.email "tip@tyk-analytics-ui"
-#           git config --local user.name "Bender"
-#           git add dashboard/bindata.go webclient
-#           git add -f .assets_vendor
-#           git commit -m "[CI] Adding assets from tyk-analytics-ui/${{ github.event.client_payload.ref }}/${{ github.event.client_payload.sha }}"
-          
-#       - name: Push changes
-#         id: push
-#         run: |
-#           git pull --no-edit --ff --strategy=ours --commit --recurse-submodules=off origin ${{ env.TA_REF }}
-#           git remote set-url origin "$(git config --get remote.origin.url | sed 's#http.*com/#git@github.com:#g')"
-#           git push -v origin ${{ env.TA_REF }}
+      - name: Commit build
+        working-directory: ./plugins/${{ matrix.plugin }}
+        run: |
+          git config --local user.email "tip@custom-plugin"
+          git config --local user.name "Bender"
+          git add dashboard/bindata.go webclient
+          git add -f builds
+          git commit -m "[CI] Build '${{ matrix.plugin }}' plugin for '{{ matrix.version }}' version"
+          git push
+
 
