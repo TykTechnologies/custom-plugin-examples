@@ -42,7 +42,7 @@ jobs:
             GOMOD=go.mod
             if [ -e "$GOMOD" ]; then
               go mod vendor
-              rm -rf  vendor/golang.org/x/* || true
+              rm -rf  vendor/golang.org/x/sys/* || true
               rm -rf  vendor/github.com/TykTechnologies/tyk || true
             fi
 
