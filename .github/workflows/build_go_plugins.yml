@@ -30,7 +30,7 @@ jobs:
       - name: Build plugins
         working-directory: ./plugins/go-auth-basicauth_dynamodb
         run: |
-          docker run --rm -v `pwd`:/plugin-source tykio/tyk-plugin-compiler:${{ VERSION }} go-auth-basicauth_dynamodb_${{ VERSION }}.so
+          docker run --rm -v `pwd`:/plugin-source tykio/tyk-plugin-compiler:$VERSION go-auth-basicauth_dynamodb_$VERSION.so
           git status
           
 #       - name: Commit bindata and submodule
