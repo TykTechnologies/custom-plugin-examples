@@ -1,26 +1,25 @@
-name: Build assets
+name: Build Go Plugins
 
 on:
   workflow_dispatch:
     inputs:
-      version:
-        default: 'v3.1.0'
-        description: 'Build Go Plugins'
-        required: true
 #   push:
 #     paths:
 #       - 'graphql/schema.graphql'
 #     branches:
 #       - 'as/manual-bindata'
 
-env:
+# env:
 #   SLACK_CLI_TOKEN: ${{ secrets.BENDER_TOKEN }}
-  VERSION: ${{ github.event.client_payload.sha || github.event.inputs.version }}
+#   VERSION: ${{ github.event.client_payload.sha }}
 
 jobs:
   update:
     runs-on: ubuntu-latest
-    
+    strategy:
+      matrix:
+        plugin: [go-auth-basicauth_dynamodb, go-auth-multiple_hook_example, go-postauth-oauth2_introspection, go-postauth-opa_integration, go-pre-cert_inject_dn]
+        versions: [v2.9.4.1, v3.0.0, v3.0.1, v3.0.2, v3.1.0, v3.1.1]
     steps:
       - name: checkout custom-plugins/master
         uses: actions/checkout@v2
@@ -28,10 +27,11 @@ jobs:
           ref: ${{ github.event.client_payload.ref }}
           
       - name: Build plugins
-        working-directory: ./plugins/go-auth-basicauth_dynamodb
+        working-directory: ./plugins/${{ matrix.plugin }}
         run: |
-          docker run --rm -v `pwd`:/plugin-source tykio/tyk-plugin-compiler:$VERSION go-auth-basicauth_dynamodb_$VERSION.so
-          git status
+          mkdir builds || true
+          docker run --rm -v `pwd`:/plugin-source tykio/tyk-plugin-compiler:${{ matrix.version }} builds/${{ matrix.plugin }}_${{ matrix.version }}.so
+          ls builds
           
 #       - name: Commit bindata and submodule
 #         run: |
