@@ -30,6 +30,9 @@ jobs:
         working-directory: ./plugins/${{ matrix.plugin }}
         run: |
           mkdir builds || true
+          export
+          echo $VERSION
+          echo $PLUGIN
           docker run --rm -v `pwd`:/plugin-source tykio/tyk-plugin-compiler:${VERSION} builds/${PLUGIN}_${VERSION}.so
           ls builds
           
