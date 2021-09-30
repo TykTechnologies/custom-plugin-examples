@@ -7,6 +7,7 @@ Here's the [different phases you can inject plugins](https://tyk.io/docs/concept
 ## Examples
 Language | Phase | Description | Link 
 -------- | ----- |------------ | --- 
+Golang	|	All	|	Go plugin for v3.2.2 which uses Go Mods	|	[Link](plugins/go-plugin-v322-example)
 Golang	|	Pre	|	Injects client certificate attributes as a Header	|	[Link](plugins/go-pre-cert_inject_dn)
 GoLang	|	Post-Auth	|	OAuth2 Introspection	|	[Link](plugins/go-postauth-oauth2_introspection)
 GoLang	|	Post-Auth	|	Authorizes request against OPA	|	[Link](plugins/go-postauth-opa_integration)
