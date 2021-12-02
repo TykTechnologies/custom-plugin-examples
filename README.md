@@ -31,7 +31,8 @@ Python	|	Pre	|	This plugin sends a message to a queue server, it uses kombu as t
 Python	|	Pre	|	This plugin sends log data to a Datadog agent.	|	[Link](plugins/py-pre-datadog_logger) 
 Python	|	Pre	|	This plugin sends log data to a Loggly HTTPS endpoint	|	[Link](plugins/py-pre-loggly_integration) 
 Python	|	Pre	|	This plugin will block requests from specific user agents, using regular expressions.	|	[Link](plugins/py-pre-bot_detection) 
-Python	|	Pre  +  Post	|	Inserts a correlation ID as a header	|	[Link](plugins/py-pre_post-correlation_id_insert) 
+Python	|	Pre  +  Post	|	Inserts a correlation ID as a header	|	[Link](plugins/py-pre_post-correlation_id_insert)
+Python	|	Post	|	Injects a signed JWT as Authorization Header	|	[Link](plugins/py-post-jwt-injection) 
 
 
 ## Virtual Endpoints
