@@ -1,0 +1,15 @@
+{
+  "file_list": [
+    "middleware.py"
+  ],
+  "custom_middleware": {
+    "post": [
+      {
+        "name": "PostMiddleware"
+      }
+    ],
+    "driver": "python"
+  },
+  "checksum": "",
+  "signature": ""
+}
