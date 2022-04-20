@@ -54,7 +54,7 @@ Then, we are ready to compile the plugin:
 $ docker run --rm -v $(pwd):/plugin-source tykio/tyk-plugin-compiler:v3.2.2-rc7 my-post-plugin-322rc7.so
 ```
 
-Viola!  We have a `plugin.so` we can mount onto our Gateway's file system.
+Voilà!  We have a `plugin.so` we can mount onto our Gateway's file system.
 
 
 ## FAQ
