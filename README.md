@@ -13,6 +13,7 @@ GoLang	|	Post-Auth	| 	OAuth2 Introspection	                                     
 GoLang	|	Post-Auth	| 	Authorizes request against OPA	                                                                         |	[Link](plugins/go-postauth-opa_integration)
 Golang	|	Post + Auth	| 	Dummy one to test the 2 hooks in go	                                                                    |	[Link](plugins/go-auth-multiple_hook_example)
 Golang	|	Pre	| 	Checks Basic Auth creds  against an AWS DynamoDB instance	                                              |	[Link](plugins/go-auth-basicauth_dynamodb)
+gRPC (GoLang)	|	Auth	| 	Performs auth check(accesstoken verification) against MongoDB	                                                                        |	[Link](plugins/grpc_go-auth-mongo-accesstoken) 
 gRPC (GoLang)	|	Pre	| 	Header Injection & Auth example	                                                                        |	[Link](plugins/grpc_go-auth-pre_headerinject_authhook) 
 gRPC (GoLang)	|	Pre	| 	Invokes an AWS Lambda	                                                                                  |	[Link](plugins/grpc_go-pre-aws_lambda) 
 gRPC (Java)	|	Auth	| 	Decodes JWT, inserts a claim and resigns it	                                                            |	[Link](plugins/grpc_java-auth-jwt_decoder_repackager) 
