@@ -4,15 +4,20 @@ This is a repository that contains examples of [Tyk Plugins](https://tyk.io/docs
 
 Here's the [different phases you can inject plugins](https://tyk.io/docs/concepts/middleware-execution-order/) in the request lifecycle.  A [response plugin](https://tyk.io/docs/plugins/response-plugins/) is also possible.
 
-## Examples
+## Custom Go Plugin Examples
+
 Language | Phase | Description                                                                                              | Link 
 -------- | ----- |----------------------------------------------------------------------------------------------------------| --- 
-Golang	|	All	| 	Go plugin for v3.2.2 which uses Go Mods	                                                                |	[Link](plugins/go-plugin-v322-example)
 Golang	|	Pre	| 	Injects client certificate attributes as a Header	                                                      |	[Link](plugins/go-pre-cert_inject_dn)
 GoLang	|	Post-Auth	| 	OAuth2 Introspection	                                                                                   |	[Link](plugins/go-postauth-oauth2_introspection)
 GoLang	|	Post-Auth	| 	Authorizes request against OPA	                                                                         |	[Link](plugins/go-postauth-opa_integration)
 Golang	|	Post + Auth	| 	Dummy one to test the 2 hooks in go	                                                                    |	[Link](plugins/go-auth-multiple_hook_example)
-Golang	|	Pre	| 	Checks Basic Auth creds  against an AWS DynamoDB instance	                                              |	[Link](plugins/go-auth-basicauth_dynamodb)
+Golang	|	Pre	| 	Checks Basic Auth creds  against an AWS DynamoDB instance	       | [Link](plugins/go-auth-basicauth_dynamodb)                  
+
+### Other Custom Plugin Languages
+
+Language | Phase | Description                                                                                              | Link 
+-------- | ----- |----------------------------------------------------------------------------------------------------------| --- 
 gRPC (GoLang)	|	Auth	| 	Performs auth check(accesstoken verification) against MongoDB	                                                                        |	[Link](plugins/grpc_go-auth-mongo-accesstoken) 
 gRPC (GoLang)	|	Pre	| 	Header Injection & Auth example	                                                                        |	[Link](plugins/grpc_go-auth-pre_headerinject_authhook) 
 gRPC (GoLang)	|	Pre	| 	Invokes an AWS Lambda	                                                                                  |	[Link](plugins/grpc_go-pre-aws_lambda) 
