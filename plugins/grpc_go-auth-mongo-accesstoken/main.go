@@ -2,13 +2,12 @@ package main
 
 import (
 	"context"
-	"fmt"
 	"net"
 	"net/http"
 	"os"
 	"time"
 
-	coprocess "github.com/TykTechnologies/tyk-protobuf/bindings/go"
+	coprocess "github.com/TykTechnologies/tyk/coprocess"
 	"github.com/sirupsen/logrus"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/bson/primitive"
@@ -56,7 +55,7 @@ func init() {
 		logrus.Fatal(err)
 	}
 
-	fmt.Println("Connected to MongoDB!")
+	logrus.Infof("Connected to MongoDB!")
 
 	// Get a handle for your collection
 	collection = client.Database(os.Getenv("DATABASE")).Collection(os.Getenv("COLLECTION"))
@@ -138,7 +137,7 @@ func validateAccessToken(collection *mongo.Collection, token string) (bool, int6
 	var accesstoken AccessToken
 	err := collection.FindOne(context.TODO(), bson.D{{Key: "_id", Value: token}}).Decode(&accesstoken)
 	if err == mongo.ErrNoDocuments {
-		fmt.Printf("No document was found with the _id %s\n", token)
+		logrus.Infof("No document was found with the _id %s\n", token)
 		return false, 0
 	}
 	if err != nil {

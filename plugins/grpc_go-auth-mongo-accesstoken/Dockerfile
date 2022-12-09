@@ -1,8 +1,8 @@
-FROM golang:1.15-alpine as builder
+FROM golang:1.16-alpine as builder
 
 WORKDIR /go/src/app
 
-RUN GRPC_HEALTH_PROBE_VERSION=v0.4.12 && \
+RUN GRPC_HEALTH_PROBE_VERSION=v0.4.14 && \
     wget -qO/bin/grpc_health_probe https://github.com/grpc-ecosystem/grpc-health-probe/releases/download/${GRPC_HEALTH_PROBE_VERSION}/grpc_health_probe-linux-amd64 && \
     chmod +x /bin/grpc_health_probe
 
