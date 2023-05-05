@@ -13,7 +13,8 @@ GoLang	|	Post-Auth	| 	OAuth2 Introspection	                                     
 GoLang	|	Post-Auth	| 	Authorizes request against OPA	                                                                         |	[Link](plugins/go-postauth-opa_integration)
 Golang	|	Post + Auth	| 	Dummy one to test the 2 hooks in go	                                                                    |	[Link](plugins/go-auth-multiple_hook_example)
 Golang	|	Pre	| 	Checks Basic Auth creds  against an AWS DynamoDB instance	       | [Link](plugins/go-auth-basicauth_dynamodb)                  
-Golang | Pre | Custom Cache | [Link](https://gist.github.com/zalbiraw/d84ab1aef532ddc2b2ee3c6df81d836b)
+Golang | Pre | Custom Cache on upstream failure | [Link](https://gist.github.com/zalbiraw/d84ab1aef532ddc2b2ee3c6df81d836b)              
+Golang | Pre | Request funneling until cache is built | [Link](https://gist.github.com/zalbiraw/b1e25dfd2132cc55a05155f4ca291e19)
 
 ### Other Custom Plugin Languages
 
