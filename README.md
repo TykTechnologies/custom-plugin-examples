@@ -41,6 +41,7 @@ Python	|	Pre	| 	This plugin sends log data to a Loggly HTTPS endpoint	          
 Python	|	Pre	| 	This plugin will block requests from specific user agents, using regular expressions.	                  |	[Link](plugins/py-pre-bot_detection) 
 Python	|	Pre  +  Post	| 	Inserts a correlation ID as a header	                                                                   |	[Link](plugins/py-pre_post-correlation_id_insert)
 Python	|	Post	| 	Injects a signed JWT as Authorization Header	                                                           |	[Link](plugins/py-post-jwt-injection) 
+Python  | Response | Modifies the header and body of a response                                                               | [Link](https://gist.github.com/oluwaseyeayinla/06605eff12e68c9920ccece1f545b4ac)
 
 
 ## Virtual Endpoints
