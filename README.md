@@ -16,7 +16,7 @@ Golang	|	Pre	| 	Checks Basic Auth creds  against an AWS DynamoDB instance	      
 Golang | Pre | Custom Cache on upstream failure | [Link](https://gist.github.com/zalbiraw/d84ab1aef532ddc2b2ee3c6df81d836b)              
 Golang | Pre | Request funneling until cache is built | [Link](https://gist.github.com/zalbiraw/b1e25dfd2132cc55a05155f4ca291e19)
 
-### Other Custom Plugin Languages
+### gRPC Plugin Languages
 
 Language | Phase | Description                                                                                              | Link 
 -------- | ----- |----------------------------------------------------------------------------------------------------------| --- 
@@ -28,12 +28,27 @@ gRPC (Java)	|	Post	| 	Inserts Metadata from the portal requested key as an HTTP 
 gRPC (.NET)	|	Auth	| 	Performs auth check against a SQL server	                                                               |	[Link](plugins/grpc_dotnet-auth_sql_basicauth ) 
 gRPC (Ruby)	|	Pre  | 	Modifies HTTP header	                                                                                   |	[Link](plugins/grpc_ruby-pre-header_modify) 
 gRPC (Python)	|	Pre  | 	Inserts a HTTP header	                                                                                  |	[Link](plugins/grpc_python-pre-insert_header) 
+
+### Javascript Plugin Languages
+
+Language | Phase | Description                                                                                              | Link 
+-------- | ----- |----------------------------------------------------------------------------------------------------------| --- 
 Javascript	|	Pre	| 	Inserts tracing ID in header	                                                                           |	[Link](plugins/js-pre-insert_header)
 Javascript	|	Pre	| 	Auth Token & mTLS protection	                                                                           |	[Link](plugins/js-pre-mtls_token_auth)
 Javascript	|	Pre	| 	Evaluates the validity of a Tyk Token	                                                                  |	[Link](plugins/js-pre-token_inspection)
 Javascript	|	Post	| 	Checks API requests against a WAF	                                                                      |	[Link](plugins/js-pre-post-waf)
 Javascript	|	Post-Auth	| 	Checks the request path against the user's meta data.  If there is a cross-over, will deny the request	 |	[Link](plugins/js-post_auth-checks_path_against_metadata)
+
+### Lua Plugin Languages
+
+Language | Phase | Description                                                                                              | Link 
+-------- | ----- |----------------------------------------------------------------------------------------------------------| --- 
 Lua	|	Pre	| 	header injection	                                                                                       |	[Link](plugins/lua-pre-header_injection) 
+
+### Python Plugin Languages
+
+Language | Phase | Description                                                                                              | Link 
+-------- | ----- |----------------------------------------------------------------------------------------------------------| --- 
 Python	|	Auth	| 	Checks API requests against a hard-coded token	                                                         |	[Link](plugins/py-auth_example) 
 Python	|	Auth	| 	Validates credentials against an LDAP server	                                                           |	[Link](plugins/py-auth-ldap_example) 
 Python	|	Pre	| 	This plugin sends a message to a queue server, it uses kombu as the messaging library	                  |	[Link](plugins/py-pre-message_queue_kombo) 
