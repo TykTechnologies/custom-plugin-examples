@@ -16,6 +16,7 @@ Golang	| 	Pre	         | 	Checks Basic Auth creds  against an AWS DynamoDB insta
 Golang | Pre           | Custom Cache on upstream failure                            | [Link](https://gist.github.com/zalbiraw/d84ab1aef532ddc2b2ee3c6df81d836b)              
 Golang | Pre           | Request funneling until cache is built                      | [Link](https://gist.github.com/zalbiraw/b1e25dfd2132cc55a05155f4ca291e19)
 Golang | Post          | Upstream OAuth2.0 (Client credentials flow)                 | [Link](plugins/go-postauth-upstream-oauth2)
+Golang | Post          | Invoke AWS Lambda with IAM Credentials                      | [Link](plugins/go-postauth-invoke-aws-lambda)
 
 ### gRPC Plugin Languages
 
