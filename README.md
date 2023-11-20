@@ -15,6 +15,7 @@ Golang	| 	Post + Auth	 | 	Dummy one to test the 2 hooks in go	                  
 Golang	| 	Pre	         | 	Checks Basic Auth creds  against an AWS DynamoDB instance	 | [Link](plugins/go-auth-basicauth_dynamodb)                  
 Golang | Pre           | Custom Cache on upstream failure                            | [Link](https://gist.github.com/zalbiraw/d84ab1aef532ddc2b2ee3c6df81d836b)              
 Golang | Pre           | Request funneling until cache is built                      | [Link](https://gist.github.com/zalbiraw/b1e25dfd2132cc55a05155f4ca291e19)
+Golang | Pre           | Upstream URL rewrite based on header, query or body value   | [Link](plugins/go-header-url-rewrite-conditional)
 Golang | Post          | Upstream OAuth2.0 (Client credentials flow)                 | [Link](plugins/go-postauth-upstream-oauth2)
 Golang | Post          | Invoke AWS Lambda with IAM Credentials                      | [Link](plugins/go-postauth-invoke-aws-lambda)
 
