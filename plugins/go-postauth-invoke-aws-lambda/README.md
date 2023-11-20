@@ -1,6 +1,6 @@
-# Invoke AWS Lambda from the Tyk Gateway
+.# Invoke AWS Lambda from the Tyk Gateway
 
-This plugin allows the Tyk Gateway to execut an AWS Lambda function specified from a header value.
+This plugin allows the Tyk Gateway to execute an AWS Lambda function specified from a header value.
 It requires a set of IAM credentials from AWS with execute permissions on your lambda of choice.
 
 ## Configuration
