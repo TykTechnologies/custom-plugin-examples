@@ -19,6 +19,7 @@ Golang | Pre           | Upstream URL rewrite based on header, query or body val
 Golang | Post          | Upstream OAuth2.0 (Client credentials flow)                 | [Link](plugins/go-postauth-upstream-oauth2)
 Golang | Post          | Invoke AWS Lambda with IAM Credentials                      | [Link](plugins/go-postauth-invoke-aws-lambda)
 Golang | Any          | Establish a connection to Redis database                      | [Link](plugins/go-connect-to-redis)
+Golang | Analytics          | Manipulate Tyk analytics records                      | [Link](plugins/go-analytics-plugins)
 
 ### gRPC Plugin Languages
 
