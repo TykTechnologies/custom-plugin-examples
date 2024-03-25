@@ -23,7 +23,7 @@ jobs:
         version: [v2.9.4.3, v3.0.0, v3.0.1, v3.0.2, v3.1.0, v3.1.1]
     steps:
       - name: checkout custom-plugins/master
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           ref: ${{ github.event.client_payload.ref }}
           
