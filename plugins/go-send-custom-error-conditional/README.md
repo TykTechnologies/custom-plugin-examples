@@ -1,6 +1,6 @@
 # Send a custom error message in a Golang function.
 
-This plugin allows the Tyk Gateway to rewrite the upstream URL of an incoming request if a header value, query parameter, or other value is present in the payload body sent in the request. If the conditional passes (storeNumber=xxxx), then include the value of the four digits in the upstream URL rewrite. For example, the incoming request is to localhost:8080/your-tyk-api/get?storeNumber=1221, the written URL is http://www.1221store.com.
+This plugin allows the Gateway proxy to process a custom error message that is produced by this plugin, based on a specific condition being set. 
 
 ## Configuration
 The function `sendErrorResponseFromMiddleware` contains a map of different error codes and their custom messages. You can add as many as you like, or read them from a different file into a map. The function takes a key as an argument so that we can dynamically pull the correct error message from the map. Then, we create a new map for the response containing the key and value, which is converted into JSON using the `json.Marshal` built in Go-function. We also write the header to explicitly use application/JSON, and the body to contain the new custom error message.
