@@ -18,6 +18,7 @@ Golang | Pre           | Request funneling until cache is built                 
 Golang | Pre           | Upstream URL rewrite based on header, query or body value   | [Link](plugins/go-header-url-rewrite-conditional)
 Golang | Post          | Upstream OAuth2.0 (Client credentials flow)                 | [Link](plugins/go-postauth-upstream-oauth2)
 Golang | Post          | Invoke AWS Lambda with IAM Credentials                      | [Link](plugins/go-postauth-invoke-aws-lambda)
+Golang | Post          | Send Custom Error Message in Plugin w/ Conditionals         | [Link](plugins/go-send-custom-error-conditional)
 Golang | Any          | Establish a connection to Redis database                      | [Link](plugins/go-connect-to-redis)
 Golang | Analytics          | Manipulate Tyk analytics records                      | [Link](plugins/go-analytics-plugins)
 
