@@ -48,4 +48,4 @@ Add this to the Tyk API definition:
         "extractor_config": {}
       }
     },
-    ```
+```
