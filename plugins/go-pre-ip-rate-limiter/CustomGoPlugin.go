@@ -1,6 +1,7 @@
 package main
 
 import (
+	"net"
 	"net/http"
 	"strings"
 
@@ -21,7 +22,7 @@ func init() {
 // IPRateLimit
 func IPRateLimit(rw http.ResponseWriter, r *http.Request) {
 	// Get the client IP address
-	clientIP := getIP(r.RemoteAddr)
+	clientIP := getIP(r)
 
 	logger.Info("Request came in from " + clientIP)
 
@@ -39,9 +40,20 @@ func IPRateLimit(rw http.ResponseWriter, r *http.Request) {
 	ctx.SetSession(r, session, true)
 }
 
-func getIP(remoteAddr string) string {
-	if ip := strings.Split(remoteAddr, ":"); len(ip) > 0 {
-		return ip[0]
+func getIP(r *http.Request) string {
+
+	for _, h := range []string{"X-Forwarded-For", "X-Real-Ip"} {
+		for _, addr := range strings.Split(r.Header.Get(h), ",") {
+			addr = strings.TrimSpace(addr)
+			// header can contain spaces too, strip those out.
+			realIP := net.ParseIP(addr)
+			if !realIP.IsGlobalUnicast() {
+				// bad address - we should alsp eventually check for private IP ranges
+				continue
+			}
+			return addr
+		}
 	}
-	return ""
+	// If no valid IP found, return the remote address
+	return r.RemoteAddr
 }
