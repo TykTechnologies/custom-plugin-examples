@@ -25,16 +25,17 @@ Golang | Analytics          | Manipulate Tyk analytics records                  
 
 ### gRPC Plugin Languages
 
-Language | Phase | Description                                                                                              | Link 
--------- | ----- |----------------------------------------------------------------------------------------------------------| --- 
-gRPC (GoLang)	|	Pre	| 	Header Injection & Auth example	                                                                        |	[Link](plugins/grpc_go-auth-pre_headerinject_authhook) 
-gRPC (GoLang)	|	Pre	| 	Invokes an AWS Lambda	                                                                                  |	[Link](plugins/grpc_go-pre-aws_lambda) 
-gRPC (Node)	|	Pre / Autg	| 	Simple NODE example with access to config data Lambda	                                                                                  |	[Link](plugins/grpc_node-auth-simple) 
-gRPC (Java)	|	Auth	| 	Decodes JWT, inserts a claim and resigns it	                                                            |	[Link](plugins/grpc_java-auth-jwt_decoder_repackager) 
-gRPC (Java)	|	Post	| 	Inserts Metadata from the portal requested key as an HTTP header	                                       |	[Link](plugins/grpc_java-post-insert_metadata_as_header) 
-gRPC (.NET)	|	Auth	| 	Performs auth check against a SQL server	                                                               |	[Link](plugins/grpc_dotnet-auth_sql_basicauth ) 
-gRPC (Ruby)	|	Pre  | 	Modifies HTTP header	                                                                                   |	[Link](plugins/grpc_ruby-pre-header_modify) 
-gRPC (Python)	|	Pre  | 	Inserts a HTTP header	                                                                                  |	[Link](plugins/grpc_python-pre-insert_header) 
+Language | Phase | Description                                                        | Link 
+-------- | ----- |--------------------------------------------------------------------| --- 
+gRPC (GoLang)	|	Pre	| 	Header Injection Example (standalone gRPC Server) 	               |	[Link](plugins/grpc-go-pre-headerinject)
+gRPC (GoLang)	|	Pre	| 	Header Injection & Auth example (bundle)	                         |	[Link](plugins/grpc_go-auth-pre_headerinject_authhook) 
+gRPC (GoLang)	|	Pre	| 	Invokes an AWS Lambda	                                            |	[Link](plugins/grpc_go-pre-aws_lambda) 
+gRPC (Node)	|	Pre / Autg	| 	Simple NODE example with access to config data Lambda	            |	[Link](plugins/grpc_node-auth-simple) 
+gRPC (Java)	|	Auth	| 	Decodes JWT, inserts a claim and resigns it	                      |	[Link](plugins/grpc_java-auth-jwt_decoder_repackager) 
+gRPC (Java)	|	Post	| 	Inserts Metadata from the portal requested key as an HTTP header	 |	[Link](plugins/grpc_java-post-insert_metadata_as_header) 
+gRPC (.NET)	|	Auth	| 	Performs auth check against a SQL server	                         |	[Link](plugins/grpc_dotnet-auth_sql_basicauth ) 
+gRPC (Ruby)	|	Pre  | 	Modifies HTTP header	                                             |	[Link](plugins/grpc_ruby-pre-header_modify) 
+gRPC (Python)	|	Pre  | 	Inserts a HTTP header	                                            |	[Link](plugins/grpc_python-pre-insert_header) 
 
 ### Javascript Plugin Languages
 
