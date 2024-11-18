@@ -27,6 +27,7 @@ Golang | Analytics          | Manipulate Tyk analytics records                  
 
 Language | Phase | Description                                                                                              | Link 
 -------- | ----- |----------------------------------------------------------------------------------------------------------| --- 
+gRPC (GoLang)	|	Auth	| 	Performs auth check(accesstoken verification) against MongoDB	                                                                        |	[Link](plugins/grpc_go-auth-mongo-accesstoken) 
 gRPC (GoLang)	|	Pre	| 	Header Injection & Auth example	                                                                        |	[Link](plugins/grpc_go-auth-pre_headerinject_authhook) 
 gRPC (GoLang)	|	Pre	| 	Invokes an AWS Lambda	                                                                                  |	[Link](plugins/grpc_go-pre-aws_lambda) 
 gRPC (Node)	|	Pre / Autg	| 	Simple NODE example with access to config data Lambda	                                                                                  |	[Link](plugins/grpc_node-auth-simple) 

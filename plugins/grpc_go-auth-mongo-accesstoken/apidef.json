@@ -1,0 +1,43 @@
+{
+  "name": "Tyk Mongo Auth API",
+  "api_id": "mongoauth",
+  "org_id": "default",
+  "definition": {
+      "location": "header",
+      "key": "version"
+  },
+  "use_keyless": false,
+  "enable_coprocess_auth": true,
+  "version_data": {
+      "not_versioned": true,
+      "versions": {
+          "Default": {
+              "name": "Default"
+          }
+      }
+  },
+  "custom_middleware": {
+      "pre": [],
+      "post": [],
+      "post_key_auth": [],
+      "auth_check": {
+        "name": "MongoAuth",
+        "path": "",
+        "require_session": false
+      },
+      "response": [],
+      "driver": "grpc",
+      "id_extractor": {
+        "extract_from": "header",
+        "extract_with": "value",
+        "extractor_config": {
+          "header_name": "Authorization"
+        }
+      }
+  },
+  "proxy": {
+      "listen_path": "/mongo-auth/",
+      "target_url": "http://httpbin.org",
+      "strip_listen_path": true
+  }
+}
