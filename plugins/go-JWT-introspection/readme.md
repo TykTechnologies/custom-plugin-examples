@@ -42,5 +42,8 @@ If using Tyk Helm Charts, use ExtraEnvs to set these environment variables.
 
 It is suggested to use this plugin as pre-authorization plugin with JWT middleware for scope-claim mapping to Tyk policies.
 
+### TODO 
 
+- Use config data instead of environment variables to support multiple IDPs
+- Add configurable cache to avoid repeated introspection requests
 
