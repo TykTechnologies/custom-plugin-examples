@@ -22,6 +22,7 @@ Golang | Post          | Invoke AWS Lambda with IAM Credentials                 
 Golang | Post          | Send Custom Error Message in Plugin w/ Conditionals         | [Link](plugins/go-send-custom-error-conditional)
 Golang | Any          | Establish a connection to Redis database                      | [Link](plugins/go-connect-to-redis)
 Golang | Analytics          | Manipulate Tyk analytics records                      | [Link](plugins/go-analytics-plugins)
+Golang | Pre           | OAS-driven mock responses (portal "Try It" without backend)  | [Link](plugins/go-pre-mock_response_from_oas)
 
 ### gRPC Plugin Languages
 

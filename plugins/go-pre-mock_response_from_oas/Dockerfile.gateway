@@ -1,0 +1,59 @@
+# =============================================================================
+# Custom Tyk Gateway with embedded MockResponder Go Plugin
+# =============================================================================
+# Strategy: "Embedded in Image" (recommended for Fargate / immutable infra)
+# The .so is compiled, tested, and baked into the Gateway image at build time.
+#
+# Usage:
+#   # Full embedded image (amd64):
+#   docker build -f Dockerfile.gateway \
+#     --platform linux/amd64 \
+#     --build-arg TYK_VERSION=v5.11.0 \
+#     -t tyk-gateway-mock-responder:v5.11.0 .
+#
+#   # For ARM64 (Graviton):
+#   docker build -f Dockerfile.gateway \
+#     --platform linux/arm64 \
+#     --build-arg TYK_VERSION=v5.11.0 \
+#     -t tyk-gateway-mock-responder:v5.11.0 .
+#
+#   # Extract .so only (for volume-mount testing):
+#   docker build -f Dockerfile.gateway --target builder \
+#     --platform linux/amd64 \
+#     --build-arg TYK_VERSION=v5.11.0 \
+#     -t mock-responder-builder .
+#   docker create --name mr-extract mock-responder-builder
+#   docker cp mr-extract:/plugin-source/mockResponder.so ../../middleware/
+#   docker rm mr-extract
+# =============================================================================
+
+ARG TYK_VERSION=v5.11.0
+
+# ---------------------------------------------------------------------------
+# Stage 1: Test and compile the Go plugin with tyk-plugin-compiler
+# ---------------------------------------------------------------------------
+FROM tykio/tyk-plugin-compiler:${TYK_VERSION} AS builder
+
+ARG TYK_VERSION
+
+COPY . /plugin-source
+WORKDIR /plugin-source
+
+# Resolve dependencies
+RUN go mod tidy
+
+# Run unit tests first — fail fast on logic errors
+RUN go test -v -p 1 ./...
+
+# Build plugin via official /build.sh (sets up Go Workspace for ABI compatibility)
+# GOGC=off prevents OOM on large dependency trees
+ENV GITHUB_TAG=${TYK_VERSION}
+RUN GOGC=off /build.sh mockResponder.so && ls -la /plugin-source/*.so
+
+# ---------------------------------------------------------------------------
+# Stage 2: Embed compiled plugin into the official Tyk Gateway image
+# ---------------------------------------------------------------------------
+FROM tykio/tyk-gateway:${TYK_VERSION}
+
+# /build.sh produces versioned filename: mockResponder_<version>_linux_<arch>.so
+COPY --from=builder /plugin-source/mockResponder*.so /opt/tyk-gateway/middleware/
