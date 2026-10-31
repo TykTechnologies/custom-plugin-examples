@@ -1,0 +1,48 @@
+{
+  "api_definition": {
+    "name": "agent-trust-api",
+    "api_id": "agent-trust-api",
+    "slug": "agent-trust-api",
+    "org_id": "default",
+    "active": true,
+    "use_keyless": true,
+    "custom_middleware": {
+      "pre": [
+        {
+          "name": "agentCertTrustCheck",
+          "path": "middleware/pre-agent-trust-check.js",
+          "require_session": false,
+          "raw_body_only": false
+        }
+      ],
+      "post": [],
+      "post_key_auth": [],
+      "auth_check": {
+        "name": "",
+        "path": "",
+        "require_session": false
+      },
+      "response": [],
+      "driver": "otto",
+      "id_extractor": {
+        "extract_from": "",
+        "extract_with": "",
+        "extractor_config": {}
+      }
+    },
+    "proxy": {
+      "listen_path": "/agent-trust-api/",
+      "target_url": "http://httpbin.org",
+      "strip_listen_path": true
+    },
+    "version_data": {
+      "not_versioned": true,
+      "versions": {
+        "Default": {
+          "name": "Default",
+          "use_extended_paths": true
+        }
+      }
+    }
+  }
+}
