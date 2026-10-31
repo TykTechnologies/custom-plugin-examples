@@ -45,6 +45,7 @@ Javascript	|	Pre	| 	Auth Token & mTLS protection	                               
 Javascript	|	Pre	| 	Evaluates the validity of a Tyk Token	                                                                  |	[Link](plugins/js-pre-token_inspection)
 Javascript	|	Post	| 	Checks API requests against a WAF	                                                                      |	[Link](plugins/js-pre-post-waf)
 Javascript	|	Post-Auth	| 	Checks the request path against the user's meta data.  If there is a cross-over, will deny the request	 |	[Link](plugins/js-post_auth-checks_path_against_metadata)
+Javascript	|	Pre	| 	Verifies a calling agent's AgentCert + TrustScore via an external sidecar (shadow-mode default)	 |	[Link](plugins/js-pre-agentcert_trust_check)
 
 ### Lua Plugin Languages
 
